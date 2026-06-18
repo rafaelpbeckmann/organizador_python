@@ -21,3 +21,8 @@ for arquivo in arquivos:
     pasta_destino = pastas_objetivo.get(extensao, "outros")
     caminho_completo_pasta = os.path.join(caminhos, pasta_destino)
     print(f"Arquivo: {arquivo} | Destino: {caminho_completo_pasta}")
+    if not os.path.exists(caminho_completo_pasta):
+        os.makedirs(caminho_completo_pasta)
+    caminho_antigo_arquivo = os.path.join(caminhos, arquivo)
+    caminho_novo_arquivo = os.path.join(caminho_completo_pasta, arquivo)
+    os.rename(caminho_antigo_arquivo, caminho_novo_arquivo)    
