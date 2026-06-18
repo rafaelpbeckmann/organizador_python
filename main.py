@@ -1,5 +1,6 @@
 import os
-caminhos = r"C:\Users\rafae\Downloads"
+caminho_usuario = os.path.expanduser("~")
+caminhos = os.path.join(caminho_usuario, "Downloads")
 pastas_objetivo = {
     ".pdf": "arquivos_pdf",
     ".docx": "arquivos_docx",
@@ -25,4 +26,4 @@ for arquivo in arquivos:
         os.makedirs(caminho_completo_pasta)
     caminho_antigo_arquivo = os.path.join(caminhos, arquivo)
     caminho_novo_arquivo = os.path.join(caminho_completo_pasta, arquivo)
-    os.rename(caminho_antigo_arquivo, caminho_novo_arquivo)    
+        
